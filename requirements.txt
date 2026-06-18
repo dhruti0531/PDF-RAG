@@ -14,3 +14,10 @@ pandas
 matplotlib
 wordcloud
 streamlit
+sentence-transformers
+transformers
+torch
+torchvision
+accelerate
+einops
+safetensors

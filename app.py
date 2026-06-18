@@ -152,38 +152,29 @@ if "documents" in st.session_state:
         st.session_state.chunks
     ]
 
-    st.subheader(
-        "📦 Chunk Statistics"
-    )
+    st.subheader("📦 Chunk Statistics")
 
-    st.write(
-        "Total Chunks:",
-        len(
-            st.session_state.chunks
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.write(
+            f"**Total Chunks:** {len(st.session_state.chunks)}"
+)
+
+        st.write(
+            f"*Average Chunk Size:* {round(sum(chunk_lengths)/len(chunk_lengths), 2)}"
         )
-    )
 
-    st.write(
-        "Average Chunk Size:",
-        round(
-            sum(chunk_lengths)
-            /
-            len(chunk_lengths),
-            2
+    with col2:
+        st.write(
+            f"*Largest Chunk:* {max(chunk_lengths)}"
         )
-    )
 
-    st.write(
-        "Largest Chunk:",
-        max(chunk_lengths)
-    )
+        st.write(
+            f"*Smallest Chunk:* {min(chunk_lengths)}"
+        )
 
-    st.write(
-        "Smallest Chunk:",
-        min(chunk_lengths)
-    )
-
-# -----------------------
+    # -----------------------
 # QUESTION
 # -----------------------
 
@@ -256,12 +247,12 @@ Answer:
         response.content
     )
 
-    with st.expander(
-    "Retrieved Context"
-):
+#     with st.expander(
+#     "Retrieved Context"
+# ):
 
-        st.text_area(
-        "Context",
-        context,
-        height=300
-        )
+#         st.text_area(
+#         "Context",
+#         context,
+#         height=300
+#            )
