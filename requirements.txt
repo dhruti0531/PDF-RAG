@@ -13,3 +13,4 @@ python-dotenv
 pandas
 matplotlib
 wordcloud
+streamlit
